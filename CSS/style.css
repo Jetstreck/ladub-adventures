@@ -1,0 +1,209 @@
+/* Tab display logic */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: tabFadeIn 0.35s ease forwards;
+}
+
+@keyframes tabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Nav Pill Button */
+.header-nav-btn {
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+.header-nav-btn:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header-nav-btn.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.18);
+    font-weight: 600;
+}
+
+/* Hero Gradient & Zoom */
+.hero-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 50%, #f9fafa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-zoom {
+    animation: heroZoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+    0% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1.10);
+    }
+}
+
+/* Film grain texture */
+.hero-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
+
+/* Glassmorphism Cards & Ambient Glows */
+.pesona-card {
+    background: rgba(20, 24, 26, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pesona-card:hover {
+    border-color: rgba(248, 248, 248, 0.699);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* Teal ambient lighting */
+.glow-teal {
+    box-shadow: 0 0 60px -10px rgba(45, 212, 191, 0.15);
+}
+
+/* Infinite Logo Marquee (Right to Left Slider)*/
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0d0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Form & Input Enhancements */
+.input-pesona {
+    background-color: #050708;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+    transition: all 0.25s ease;
+}
+
+.input-pesona:focus {
+    outline: none;
+    border-color: #2dd4bf;
+    box-shadow: 0 0 15px -3px rgba(45, 212, 191, 0.3);
+}
+
+.input-pesona::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* Auth Mode Toggle Pill */
+.auth-tab-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.25s ease;
+}
+
+.auth-tab-btn.active {
+    background-color: rgba(45, 212, 191, 0.15);
+    color: #2dd4bf;
+    border: 1px solid rgba(45, 212, 191, 0.4);
+}
+
+/* Custom Toggle Switch Component */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: .3s;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked+.toggle-slider {
+    background-color: #2dd4bf;
+    border-color: #2dd4bf;
+}
+
+input:checked+.toggle-slider:before {
+    transform: translateX(20px);
+}

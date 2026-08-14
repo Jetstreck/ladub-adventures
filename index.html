@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Ladub Adventure - Bespoke Luxury Travel Systems & Tailored Expeditions for Discerning Travelers.">
+    <title>Ladub Adventure | Travel Tour Adventure</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+    <!-- FontAwosome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body class="bg-[#1A1B1D] text-[#EDEBE4] font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0a0a0a]/40 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" onclick="switchTab('home')"
+                class="focus:outline-none flex-shrink-0 flex flex-col leading-tight">
+                <span
+                    class="font-sans font-bold text-[17px] text-white tracking-tight hover:text-white/80 transition-colors duration-200">LADUB
+                    .</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] text-white/40 font-medium mt-1">adventure</span>
+            </a>
+
+            <!-- Navigation For Dekstop Browser-->
+            <nav class="hidden md:flex items-center">
+                <div
+                    class="flex items-center gap-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-full px-2 py-1.5">
+                    <button onclick="switchTab('home')" id="tab-nav-home"
+                        class="header-nav-btn active px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200">Home</button>
+                    <button onclick="switchTab('about')" id="tab-nav-about"
+                        class="header-nav-btn px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200">About</button>
+                    <button onclick="switchTab('villa')" id="tab-nav-villa"
+                        class="header-nav-btn px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200">Villa</button>
+
+                    <!-- Services Dropdown Navigation -->
+                    <div class="relative group">
+                        <button id="tab-nav-services" onclick="switchTab('services')"
+                            class="header-nav-btn px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200 inline-flex items-center gap-1.5 focus:outline-none">
+                            <span>Services</span>
+                            <i
+                                class="fa-solid fa-chevron-down text-[9px] opacity-60 group-hover:rotate-180 transition-transform duration-200"></i>
+                        </button>
+                        <!-- Dropdown Content -->
+                        <div
+                            class="absolute top-full left-0 mt-2 w-56 bg-[#141517]/95 backdrop-blur-xl border border-white/15 rounded-2xl p-2 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <button onclick="switchTab('services')"
+                                class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-between group/item transition-colors">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-layer-group text-white/70"></i>
+                                    Semua Layanan
+                                </span>
+                                <i
+                                    class="fa-solid fa-arrow-right text-[10px] opacity-0 group-hover/item:opacity-100 transition-opacity"></i>
+                            </button>
+                            <button onclick="switchTab('calculator')"
+                                class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium text-white/80 hover:text-white hover:bg-white/10 flex items-center justify-between group/item transition-colors mt-0.5">
+                                <span class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-calculator text-white/70"></i>
+                                    Kalkulator Budget
+                                </span>
+                                <span
+                                    class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-white/10 text-white border border-white/30 uppercase tracking-wider">Fitur</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button onclick="switchTab('destinations')" id="tab-nav-destinations"
+                        class="header-nav-btn px-4 py-1.5 rounded-full text-[13px] font-medium text-white/70 hover:text-white hover:bg-white/10 transition-all duration-200">Destination</button>
+                </div>
+            </nav>
+
+            <!-- CTA + Mobile Button-->
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <!-- CTA Button -->
+                <button onclick="switchTab('contact')"
+                    class="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-full text-[13px] font-semibold bg-white text-[#0f0f0f] hover:bg-white/90 transition-all duration-200">
+                    Let's Talk
+                </button>
+
+                <!-- Diveder -->
+                <div class="hidden md:block w-px h-5 bg-white/20"></div>
+
+                <!-- Login -->
+                <button onclick="switchTab('login')"
+                    class="hidden sm:inline-flex items-center gap-2 px-5 py-2 rounded-full text-[13px] font-semibold bg-white text-[#0f0f0f] hover:bg-white/90 transition-all duration-200">
+                    Login
+                </button>
+
+                <!-- Icon Menu -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()"
+                    class="md:hidden flex flex-col justify-center items-end gap-[5px] p-2 focus:outline-none group">
+                    <span
+                        class="block w-5 h-[2px] bg-white/70 rounded-full group-hover:bg-white transition-colors"></span>
+                    <span
+                        class="block w-3.5 h-[2px] bg-white/70 rounded-full group-hover:bg-white transition-colors"></span>
+                    <span
+                        class="block w-4 h-[2px] bg-white/70 rounded-full group-hover:bg-white transition-colors"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#161616] border-t border-white/10 px-6 py-6 transition-all">
+            <div class="flex flex-col space-y-1">
+                <button onclick="switchTab('home'); toggleMobileMenu()"
+                    class="text-left text-sm font-medium text-white/70 hover:text-white py-3 border-b border-white/10 transition-colors">Home</button>
+                <button onclick="switchTab('about'); toggleMobileMenu()"
+                    class="text-left text-sm font-medium text-white/70 hover:text-white py-3 border-b border-white/10 transition-colors">About</button>
+                <button onclick="switchTab('destinations'); toggleMobileMenu()"
+                    class="text-left text-sm font-medium text-white/70 hover:text-white py-3 border-b border-white/10 transition-colors">Destinations</button>
+                <button onclick="switchTab('villa'); toggleMobileMenu()"
+                    class="text-left text-sm font-medium text-white/70 hover:text-white py-3 border-b border-white/10 transition-colors">Villa</button>
+
+                <div class="border-b border-white/10 py-3 space-y-2">
+                    <div
+                        class="flex items-center justify-between text-xs text-white/40 uppercase tracking-wider font-semibold px-1">
+                        <span>Services Menu</span>
+                        <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                    </div>
+                    <button onclick="switchTab('services'); toggleMobileMenu()"
+                        class="w-full text-left text-sm font-medium text-white/80 hover:text-white py-1.5 px-3 rounded-lg hover:bg-white/5 flex items-center gap-2 transition-colors">
+                        <i class="fa-solid fa-layer-group text-xs text-white/70"></i>
+                        <span>Semua Layanan</span>
+                    </button>
+                    <button onclick="switchTab('calculator'); toggleMobileMenu()"
+                        class="w-full text-left text-sm font-medium text-white/80 hover:text-white py-1.5 px-3 rounded-lg hover:bg-white/5 flex items-center justify-between transition-colors">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-calculator text-xs text-white/70"></i>
+                            <span>Kalkulator Budget</span>
+                        </span>
+                        <span
+                            class="px-2 py-0.5 rounded-full text-[10px] bg-white/10 text-white border border-white/30">Calc</span>
+                    </button>
+                </div>
+
+                <button onclick="switchTab('contact'); toggleMobileMenu()"
+                    class="w-full mt-5 py-3 bg-white text-[#0f0f0f] rounded-full text-sm font-semibold text-center hover:bg-white/90 transition-colors">
+                    Let's Talk
+                </button>
+
+                <button onclick="switchTab('login'); toggleMobileMenu()"
+                    class="w-full mt-3 py-3 border border-white/20 text-white rounded-full text-sm font-semibold text-center hover:bg-white/10 transition-colors">
+                    Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Tab 1: Home Page -->
+        <div id="tab-home" class="tab-content active">
+
+            <!-- Hero Section -->
+            <section class="relative min-h-screen flex flex-col overflow-hidden bg-[#0a0a0a]">
+
+                <!-- Background Image & Layered Overlays -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./assets/pantai.jpg" alt="Pantai"
+                        class="w-full h-full object-cover object-center scale-105 hero-zoom" />
+                    <!-- Dark gradient overlays -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30"></div>
+                    <!-- Subtle noise texture overlay -->
+                    <div class="absolute inset-0 hero-grain opacity-[0.04]"></div>
+                </div>
+
+                <!-- Glowing orb accent -->
+                <div
+                    class="absolute top-1/3 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] z-0 pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] z-0 pointer-events-none">
+                </div>
+
+                <!-- Main Hero Content -->
+                <div class="relative z-10 flex-1 flex items-center">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 pb-52">
+                        <div class="max-w-3xl space-y-8">
+
+                            <!-- Main Heading -->
+                            <div class="space-y-3">
+                                <h1 class="font-serif font-bold text-white leading-[1.05]">
+                                    <span
+                                        class="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight">Ladub
+                                        .</span>
+                                    <span
+                                        class="block text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight hero-gradient-text italic">
+                                        Adventure</span>
+                                </h1>
+                                <p class="text-white/40 text-xs uppercase tracking-[0.4em] font-medium pt-2">Tour ·
+                                    Travel · Adventure</p>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-white/60 text-base sm:text-lg font-light leading-relaxed max-w-2xl">
+                                Ekspedisi alam, tempat penginapan privat eksklusif, dan destinasi rahasia indonesia —
+                                dirancang bagi anda yang tak ingin puas hanya dengan liburan biasa.
+                            </p>
+
+                            <!-- CTA Buttons & Stats -->
+                            <div class="flex flex-wrap items-center gap-6 pt-2">
+                                <button onclick="switchTab('destinations')"
+                                    class="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#0a0a0a] font-bold text-xs uppercase tracking-[0.25em] rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-white/10">
+                                    <span>Eksplorasi Sekarang</span>
+                                    <i
+                                        class="fa-solid fa-circle-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200"></i>
+                                </button>
+                                <!-- <button onclick="switchTab('calculator')"
+                                    class="inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white/80 font-semibold text-xs uppercase tracking-[0.25em] rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 backdrop-blur-sm">
+                                    <i class="fa-solid fa-calculator text-xs text-white/50"></i>
+                                    <span>Plan Budget</span>
+                                </button> -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOTTOM: Featured card-->
+                <div class="absolute bottom-10 left-0 right-0 z-20 hidden lg:block">
+                    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                        <!-- Cards Grid -->
+                        <div class="grid grid-cols-4 gap-5">
+
+                            <!-- Card 1: Bali -->
+                            <div onclick="switchTab('destinations')"
+                                class="relative h-48 rounded-2xl overflow-hidden cursor-pointer group border border-white/15 shadow-xl transition-all duration-500 hover:border-white/40 hover:shadow-[0_15px_35px_rgba(255,255,255,0.12)] hover:-translate-y-2">
+                                <!-- Background Image with Zoom -->
+                                <img src="./assets/agung.jpg" alt="Gunung Agung"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+
+                                <!-- Dark Gradient Overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/75 transition-all duration-500">
+                                </div>
+
+                                <!-- Top Badges -->
+                                <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-bold uppercase tracking-wider text-white/90">
+                                        Bali
+                                    </span>
+                                </div>
+
+                                <!-- Bottom Content (Normal vs Hover Reveal) -->
+                                <div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+                                    <!-- Title -->
+                                    <h4
+                                        class="font-serif text-base font-bold text-white leading-tight transition-colors">
+                                        Gunung Agung</h4>
+
+                                    <!-- Normal state Price -->
+                                    <p class="text-xs text-white/70 font-light mt-1 group-hover:hidden transition-all">
+                                        Dari Rp 1.500.000 /
+                                        malam</p>
+
+                                    <!-- Hover Reveal Details -->
+                                    <div
+                                        class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-28 transition-all duration-500 ease-out overflow-hidden space-y-2 pt-1">
+                                        <p class="text-[11px] text-white/80 leading-relaxed font-light">
+                                            Resor lereng bukit yang megah dengan pemandangan Gunung Agung.
+                                        </p>
+                                        <div class="flex items-center justify-between pt-1 border-t border-white/15">
+                                            <span class="text-xs text-white font-semibold">Rp 1.500.000 <span
+                                                    class="text-[9px] text-white/50 font-normal">/ malam</span></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-white/90 text-[#0a0a0a] text-[10px] uppercase font-bold tracking-wider shadow-md transition-all">
+                                                <span>Explore</span>
+                                                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2: Jogja -->
+                            <div onclick="switchTab('destinations')"
+                                class="relative h-48 rounded-2xl overflow-hidden cursor-pointer group border border-white/15 shadow-xl transition-all duration-500 hover:border-white/40 hover:shadow-[0_15px_35px_rgba(255,255,255,0.12)] hover:-translate-y-2">
+                                <!-- Background Image with Zoom -->
+                                <img src="./assets/yogya.jpg" alt="Jogja"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+
+                                <!-- Dark Gradient Overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/75 transition-all duration-500">
+                                </div>
+
+                                <!-- Top Badges -->
+                                <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-bold uppercase tracking-wider text-white/90">
+                                        Jogja
+                                    </span>
+                                </div>
+
+                                <!-- Bottom Content (Normal vs Hover Reveal) -->
+                                <div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+                                    <!-- Title -->
+                                    <h4
+                                        class="font-serif text-base font-bold text-white leading-tight transition-colors">
+                                        Tugu Jogja</h4>
+
+                                    <!-- Normal state Price -->
+                                    <p class="text-xs text-white/70 font-light mt-1 group-hover:hidden transition-all">
+                                        Dari Rp 800.000 / malam
+                                    </p>
+
+                                    <!-- Hover Reveal Details -->
+                                    <div
+                                        class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-28 transition-all duration-500 ease-out overflow-hidden space-y-2 pt-1">
+                                        <p class="text-[11px] text-white/80 leading-relaxed font-light">
+                                            Penginapan warisan budaya elegan di jantung Kota Jogja.
+                                        </p>
+                                        <div class="flex items-center justify-between pt-1 border-t border-white/15">
+                                            <span class="text-xs text-white font-semibold">Rp 800.000 <span
+                                                    class="text-[9px] text-white/50 font-normal">/ malam</span></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-white/90 text-[#0a0a0a] text-[10px] uppercase font-bold tracking-wider shadow-md transition-all">
+                                                <span>Explore</span>
+                                                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3: Bromo -->
+                            <div onclick="switchTab('destinations')"
+                                class="relative h-48 rounded-2xl overflow-hidden cursor-pointer group border border-white/15 shadow-xl transition-all duration-500 hover:border-white/40 hover:shadow-[0_15px_35px_rgba(255,255,255,0.12)] hover:-translate-y-2">
+                                <!-- Background Image with Zoom -->
+                                <img src="./assets/bromo.jpg" alt="Bromo"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+
+                                <!-- Dark Gradient Overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/75 transition-all duration-500">
+                                </div>
+
+                                <!-- Top Badges -->
+                                <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-bold uppercase tracking-wider text-white/90">
+                                        Jawa Timur
+                                    </span>
+                                </div>
+
+                                <!-- Bottom Content (Normal vs Hover Reveal) -->
+                                <div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+                                    <!-- Title -->
+                                    <h4
+                                        class="font-serif text-base font-bold text-white leading-tight transition-colors">
+                                        Gunung Bromo</h4>
+
+                                    <!-- Normal state Price -->
+                                    <p class="text-xs text-white/70 font-light mt-1 group-hover:hidden transition-all">
+                                        Dari 800.000 /
+                                        night</p>
+
+                                    <!-- Hover Reveal Details -->
+                                    <div
+                                        class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-28 transition-all duration-500 ease-out overflow-hidden space-y-2 pt-1">
+                                        <p class="text-[11px] text-white/80 leading-relaxed font-light">
+                                            Sanctuary eksklusif dengan pemandangan langsung ke lautan pasir dan panorama
+                                            matahari terbit Bromo yang memukau.
+                                        </p>
+                                        <div class="flex items-center justify-between pt-1 border-t border-white/15">
+                                            <span class="text-xs text-white font-semibold">Rp 800.000 <span
+                                                    class="text-[9px] text-white/50 font-normal">/ malam</span></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-white/90 text-[#0a0a0a] text-[10px] uppercase font-bold tracking-wider shadow-md transition-all">
+                                                <span>Explore</span>
+                                                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4: NTT -->
+                            <div onclick="switchTab('destinations')"
+                                class="relative h-48 rounded-2xl overflow-hidden cursor-pointer group border border-white/15 shadow-xl transition-all duration-500 hover:border-white/40 hover:shadow-[0_15px_35px_rgba(255,255,255,0.12)] hover:-translate-y-2">
+                                <!-- Background Image with Zoom -->
+                                <img src="./assets/komodo.jpg" alt="Komodo"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+
+                                <!-- Dark Gradient Overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20 group-hover:from-black/95 group-hover:via-black/75 transition-all duration-500">
+                                </div>
+
+                                <!-- Top Badges -->
+                                <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-bold uppercase tracking-wider text-white/90">
+                                        NTT
+                                    </span>
+                                </div>
+
+                                <!-- Bottom Content (Normal vs Hover Reveal) -->
+                                <div class="absolute inset-0 p-4 flex flex-col justify-end z-10">
+                                    <!-- Title -->
+                                    <h4
+                                        class="font-serif text-base font-bold text-white leading-tight transition-colors">
+                                        Pulau Komodo</h4>
+
+                                    <!-- Normal state Price -->
+                                    <p class="text-xs text-white/70 font-light mt-1 group-hover:hidden transition-all">
+                                        Dari Rp 3.500.000 /
+                                        malam</p>
+
+                                    <!-- Hover Reveal Details -->
+                                    <div
+                                        class="opacity-0 max-h-0 group-hover:opacity-100 group-hover:max-h-28 transition-all duration-500 ease-out overflow-hidden space-y-2 pt-1">
+                                        <p class="text-[11px] text-white/80 leading-relaxed font-light">
+                                            Resor tepi pantai pribadi dan pelayaran Phinisi mewah untuk menjelajahi
+                                            keindahan laut serta keajaiban Pulau Komodo.
+                                        </p>
+                                        <div class="flex items-center justify-between pt-1 border-t border-white/15">
+                                            <span class="text-xs text-white font-semibold">Rp 3.500.000 <span
+                                                    class="text-[9px] text-white/50 font-normal">/ malam</span></span>
+                                            <span
+                                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white hover:bg-white/90 text-[#0a0a0a] text-[10px] uppercase font-bold tracking-wider shadow-md transition-all">
+                                                <span>Explore</span>
+                                                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Infinite Logo Marquee Section -->
+            <section class="py-14 bg-[#0a0a0a] relative overflow-hidden">
+
+                <!-- Side Fade Gradient Shadows -->
+                <div
+                    class="absolute inset-y-0 left-0 w-28 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none">
+                </div>
+                <div
+                    class="absolute inset-y-0 right-0 w-28 bg-gradient-to-l from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10 pointer-events-none">
+                </div>
+
+                <div class="max-w-7xl mx-auto px-6 lg:px-10 mb-6 text-center">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.35em] text-white/40">Trusted By &amp;
+                        Integrated With Global Travel Leaders</span>
+                </div>
+
+                <!-- Marquee Track (Infinite Right-to-Left Scroll) -->
+                <div class="flex overflow-hidden select-none">
+                    <div class="animate-marquee flex items-center gap-16 sm:gap-24 pr-16">
+
+                        <!-- Logo Item 1: Traveloka -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/traveloka.png"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Traveloka">
+                        </div>
+
+                        <!-- Logo Item 2: Tiket.com -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/tiket.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Tiket.com">
+                        </div>
+
+                        <!-- Logo Item 3: Tripadvisor -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/tripadvisor.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Tripadvisor">
+                        </div>
+
+                        <!-- Logo Item 4: Emirates -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Emirates_logo.webp"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Emirates">
+                        </div>
+
+                        <!-- Logo Item 5: Booking.com -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Booking.com-Logo.wine.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Booking.com">
+                        </div>
+
+                        <!-- Logo Item 6: Airbnb Luxe -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/airbnb.webp"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Airbnb">
+                        </div>
+
+                        <!-- Logo Item 7: Lion Air -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Lion_Air.png"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Qatar Airways">
+                        </div>
+
+                        <!-- Logo Item 8: Marriott Bonvoy -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Marriott_hotels_logo.webp"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Marriott">
+                        </div>
+
+                        <!-- Duplicate Infinite Loop -->
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/traveloka.png"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Traveloka">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/tiket.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Tiket.com">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/tripadvisor.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Tripadvisor">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Emirates_logo.webp"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Emirates">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Booking.com-Logo.wine.png"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Booking.com">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/airbnb.webp"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Airbnb">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Lion_Air.png"
+                                class="h-10 sm:h-12 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Qatar Airways">
+                        </div>
+
+                        <div class="group cursor-pointer flex-shrink-0">
+                            <img src="./assets/partner/Marriott_hotels_logo.webp"
+                                class="h-9 sm:h-11 w-auto object-contain filter brightness-0 invert opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                alt="Marriott">
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Process Section -->
+            <section class="py-28 bg-[#0A0A0A] relative overflow-hidden">
+
+                <!-- Glowing Ambient Lighting -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-white/[0.02] rounded-full blur-[140px] pointer-events-none">
+                </div>
+
+                <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-20">
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold uppercase tracking-wider text-white mt-1">
+                            RANCANG PETUALANGAN ANDA</h2>
+                        <div class="w-16 h-0.5 bg-white/30 mx-auto mt-4"></div>
+                        <p class="text-white/60 text-sm mt-4 font-light leading-relaxed">
+                            Penyusunan jadwal personal, pemesanan akomodasi, dan akses khusus ke destinasi alam
+                            yang masih murni.
+                        </p>
+                    </div>
+
+                    <!-- 3 Step-by-Step Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+
+                        <!-- Connecting Line (Desktop) -->
+                        <div
+                            class="hidden md:block absolute top-1/2 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-16 z-0">
+                        </div>
+
+                        <!-- Step 1: Consultation -->
+                        <div
+                            class="relative z-10 bg-[#141414]/90 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:border-white/40 shadow-2xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.06)] hover:-translate-y-2 transition-all duration-500 group">
+                            <div class="flex items-center justify-between mb-8">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-[#0a0a0a] group-hover:scale-110 transition-all duration-300 shadow-inner">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-white/10 border border-white/15 text-white/80 text-[10px] uppercase tracking-widest font-bold rounded-full">
+                                    Phase 01
+                                </span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                Konsultasi Perjalanan</h3>
+                            <p class="text-white/60 text-xs leading-relaxed font-light">
+                                Diskusi mendalam bersama Travel Planner pribadi Anda untuk memahami preferensi gaya
+                                liburan, tingkat privasi, hingga selera kuliner Anda.
+                            </p>
+                        </div>
+
+                        <!-- Step 2: Design -->
+                        <div
+                            class="relative z-10 bg-[#141414]/90 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:border-white/40 shadow-2xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.06)] hover:-translate-y-2 transition-all duration-500 group">
+                            <div class="flex items-center justify-between mb-8">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-[#0a0a0a] group-hover:scale-110 transition-all duration-300 shadow-inner">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-white/10 border border-white/15 text-white/80 text-[10px] uppercase tracking-widest font-bold rounded-full">
+                                    Phase 02
+                                </span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                Rencana Perjalanan
+                            </h3>
+                            <p class="text-white/60 text-xs leading-relaxed font-light">
+                                Merencanakan rute liburan privat, memesan vila eksklusif tersembunyi, hingga menyusun
+                                jadwal kegiatan harian yang dikurasi khusus untuk Anda.
+                            </p>
+                        </div>
+
+                        <!-- Step 3: Booking -->
+                        <div
+                            class="relative z-10 bg-[#141414]/90 backdrop-blur-xl p-8 rounded-3xl border border-white/10 hover:border-white/40 shadow-2xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.06)] hover:-translate-y-2 transition-all duration-500 group">
+                            <div class="flex items-center justify-between mb-8">
+                                <div
+                                    class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-[#0a0a0a] group-hover:scale-110 transition-all duration-300 shadow-inner">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-white/10 border border-white/15 text-white/80 text-[10px] uppercase tracking-widest font-bold rounded-full">
+                                    Phase 03
+                                </span>
+                            </div>
+                            <h3
+                                class="font-serif text-2xl font-bold text-white mb-3 group-hover:text-white transition-colors">
+                                Kenyamanan Penuh</h3>
+                            <p class="text-white/60 text-xs leading-relaxed font-light">
+                                Duduk manis dan nikmati momen Anda. Kami menangani seluruh detail pemesanan dan
+                                menyediakan dukungan pribadi selama Anda menjelajah.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 2: About Us -->
+        <div id="tab-about" class="tab-content">
+
+            <!-- ===== 1. HERO BANNER (ABOUT US) ===== -->
+            <section class="relative min-h-[70vh] flex flex-col justify-between overflow-hidden bg-[#070a0c]">
+
+                <!-- Deep Dark Ocean Photo Backdrop with Subtle Glow Overlay -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./assets/hutan.jpg" alt="Pesona Alam Nature View"
+                        class="w-full h-full object-cover object-center hero-zoom" />
+                    <!-- Dark gradient overlays -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30"></div>
+                    <!-- Subtle noise texture overlay -->
+                    <div class="absolute inset-0 hero-grain opacity-[0.04]"></div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-36 pb-16 w-full text-center">
+                    <div class="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
+
+                        <!-- Main Heading -->
+                        <div class="space-y-1">
+                            <h1
+                                class="font-serif font-bold text-white tracking-tight text-5xl sm:text-6xl lg:text-7xl leading-[1.1]">
+                                Tentang Kami<br />
+                            </h1>
+                            <p class="text-white/40 text-xs uppercase tracking-[0.4em] font-medium pt-2">
+                                Melayani Anda Sepenuh Hati</p>
+                        </div>
+
+                        <!-- Description Paragraph -->
+                        <p class="text-white/80 text-base sm:text-lg font-light leading-relaxed max-w-2xl mx-auto">
+                            Kami merancang perjalanan privat terkurasi di destinasi tersembunyi Indonesia — memadukan
+                            keaslian alam, privasi mutlak, dan pelayanan berkualitas tinggi untuk petualangan yang tak
+                            terlupakan.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- 4 Minimalist Metric Cards (At Bottom of Hero) -->
+                <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-12 w-full">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+                        <div class="pesona-card p-5 rounded-2xl border border-white/10">
+                            <div class="font-serif text-3xl font-bold text-white">5+ Tahun</div>
+                            <div class="text-[11px] text-white font-medium uppercase tracking-wider mt-1">Pengalaman
+                                Kami</div>
+                        </div>
+
+                        <div class="pesona-card p-5 rounded-2xl border border-white/10">
+                            <div class="font-serif text-3xl font-bold text-white">50+</div>
+                            <div class="text-[11px] text-white font-medium uppercase tracking-wider mt-1">Destinasi
+                                Wisata</div>
+                        </div>
+
+                        <div class="pesona-card p-5 rounded-2xl border border-white/10">
+                            <div class="font-serif text-3xl font-bold text-white">99.8%</div>
+                            <div class="text-[11px] text-white font-medium uppercase tracking-wider mt-1">Kepuasan
+                                Penlanggan</div>
+                        </div>
+
+                        <div class="pesona-card p-5 rounded-2xl border border-white/10">
+                            <div class="font-serif text-3xl font-bold text-white">100%</div>
+                            <div class="text-[11px] text-white font-medium uppercase tracking-wider mt-1">Konservasi
+                                Lingkungan</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ===== 2. CERITA KAMI (OUR STORY & VISION) ===== -->
+            <section class="bg-[#0E0E0E] py-24  border-white/10 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                        <!-- Text Content -->
+                        <div class="space-y-6">
+                            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white leading-tight">
+                                Mengungkap Keindahan Nusantara Yang Belum Terjamah
+                            </h2>
+                            <p class="text-white/70 text-sm sm:text-base leading-relaxed font-light">
+                                Ladub Adventure lahir dari gairah mendalam pada kekayaan lanskap Indonesia. Kami percaya
+                                bahwa perjalanan terbaik bukanlah sekadar mengunjungi tempat populer, melainkan
+                                merasakan keaslian alam murni, ketenangan ruang privat, dan kehangatan budaya lokal.
+                            </p>
+                            <p class="text-white/60 text-xs sm:text-base leading-relaxed font-light">
+                                Setiap rute perjalanan dikurasi secara mendalam oleh tim lokal profesional untuk
+                                memastikan petualangan Anda berjalan aman, berkesan, dan membawa dampak positif bagi
+                                pelestarian alam Nusantara.
+                            </p>
+                        </div>
+
+                        <!-- Image Card -->
+                        <div class="relative h-96 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                            <img src="./assets/sawah.jpg" alt="Pesona Alam Expedition"
+                                class="w-full h-full object-cover" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#05080a] via-transparent to-transparent">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== 3. NILAI UTAMA KAMI (CORE PILLARS) ===== -->
+            <section class="bg-[#0E0E0E] py-24">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white uppercase tracking-wider mt-2">
+                            Nilai Utama Pesona Alam
+                        </h2>
+                        <div class="w-12 h-0.5 bg-white/50 mx-auto mt-4"></div>
+                    </div>
+
+                    <!-- 3 Value Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                        <!-- Pillar 1 -->
+                        <div class="pesona-card p-8 rounded-3xl space-y-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-500/30 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Keberlanjutan Alam</h3>
+                            <p class="text-white/60 text-xs sm:text-sm leading-relaxed font-light">
+                                Kami berkomitmen menjaga keaslian ekosistem flora dan fauna lokal serta memberdayakan
+                                komunitas adat di setiap destinasi penjelajahan.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="pesona-card p-8 rounded-3xl space-y-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-500/30 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Privasi & Keamanan</h3>
+                            <p class="text-white/60 text-xs sm:text-sm leading-relaxed font-light">
+                                Kenyamanan dan ketenangan pikiran Anda adalah prioritas utama. Rute dan penginapan
+                                privat disiapkan jauh dari keramaian masal.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="pesona-card p-8 rounded-3xl space-y-4">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-500/30 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white">Kurasi Autentik</h3>
+                            <p class="text-white/60 text-xs sm:text-sm leading-relaxed font-light">
+                                Setiap pengalaman dikurasi langsung oleh pemandu dan travel planner berpengalaman untuk
+                                menyajikan keindahan nusantara yang sejati.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== 4. ECOSYSTEM PARTNERS LOGO BAR ===== -->
+            <section class="bg-[#0E0E0E] py-10 ">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+                    <div class="text-center mb-6">
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-white/40 font-semibold">EKOSISTEM &
+                            MITRA PERJALANAN</span>
+                    </div>
+                    <div
+                        class="flex flex-wrap items-center justify-between gap-8 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">
+                        <span
+                            class="text-white font-serif tracking-wide text-sm font-semibold opacity-70 hover:opacity-100 flex items-center gap-1.5"><i
+                                class="fa-solid fa-owl"></i> TripAdvisor</span>
+                        <span
+                            class="text-white font-serif tracking-widest text-sm font-bold opacity-70 hover:opacity-100">Emirates</span>
+                        <span
+                            class="text-white font-sans text-sm font-bold tracking-tight opacity-70 hover:opacity-100">Booking.com</span>
+                        <span
+                            class="text-white font-sans text-sm font-semibold tracking-wide opacity-70 hover:opacity-100"><i
+                                class="fa-brands fa-airbnb"></i> airbnb</span>
+                        <span class="text-white font-serif italic text-sm font-bold opacity-70 hover:opacity-100">Lion
+                            Air</span>
+                        <span
+                            class="text-white font-serif text-sm font-semibold tracking-widest opacity-70 hover:opacity-100">Marriott</span>
+                        <span
+                            class="text-white font-sans text-sm font-bold tracking-wide opacity-70 hover:opacity-100">traveloka</span>
+                        <span
+                            class="text-white font-sans text-sm font-bold tracking-wider opacity-70 hover:opacity-100">tiket
+                            <span class="w-2.5 h-2.5 rounded-full bg-white inline-block"></span> com</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== 5. TIM DI BALIK PESONA ALAM (OUR TEAM) ===== -->
+            <section class="bg-[#0E0E0E] py-24">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <span class="text-[11px] uppercase tracking-[0.35em] text-white/50 font-semibold">Gallery</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white uppercase tracking-wider mt-2">
+                            Keindahan Alam
+                        </h2>
+                    </div>
+
+                    <!-- Bento Grid -->
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr 1.5fr 1fr; grid-template-rows: 280px 280px; gap: 16px;">
+
+                        <!-- Card 1: TALL LEFT — row 1-2, col 1 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 relative group"
+                            style="grid-column: 1; grid-row: 1 / 3;">
+                            <img src="./assets/gallery/pura.jpg" alt="Pura"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/30 to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="font-serif text-xl font-bold text-white leading-tight">Pura Luhur Uluwatu
+                                </h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: TOP MIDDLE — small square, row 1, col 2 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 relative group"
+                            style="grid-column: 2; grid-row: 1;">
+                            <img src="./assets/gallery/borobudur.jpg" alt="borobudur"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-5">
+                                <h3 class="font-serif text-lg font-bold text-white">Borobudur</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: TOP RIGHT — wide landscape, row 1, col 3-4 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 relative group"
+                            style="grid-column: 3 / 5; grid-row: 1;">
+                            <img src="./assets/gallery/desa.jpg" alt="desa"
+                                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+
+                                <h3 class="font-serif text-xl font-bold text-white">Pedesaan</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: BOTTOM WIDE — wide, row 2, col 2-3 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 relative group"
+                            style="grid-column: 2 / 4; grid-row: 2;">
+                            <img src="./assets/gallery/masjid.jpg" alt="masjid"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="font-serif text-xl font-bold text-white">Masjid</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: BOTTOM RIGHT — small square, row 2, col 4 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 relative group"
+                            style="grid-column: 4; grid-row: 2;">
+                            <img src="./assets/gallery/tumpaksewu.jpg" alt="tumpaksewu"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/20 to-transparent">
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6">
+                                <h3 class="font-serif text-xl font-bold text-white">Tumpak Sewu</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== 6. CTA BANNER ===== -->
+            <section class="bg-[#0E0E0E] py-24 text-center relative overflow-hidden">
+                <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
+                    <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white leading-tight">
+                        Siap Memulai <br /><span class="hero-gradient-text">Petualangan Anda?</span>
+                    </h2>
+                    <p class="text-white/60 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed">
+                        Hubungi konsultan perjalanan privat kami untuk menyusun liburan impian yang terkurasi khusus
+                        bagi Anda.
+                    </p>
+                    <div>
+                        <button onclick="switchTab('contact')"
+                            class="px-9 py-4 bg-white text-[#070a0c] rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white/50 transition-all duration-300 hover:scale-105 shadow-2xl">
+                            Konsultasi Perjalanan Sekarang
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 3 : Villa -->
+        <div id="tab-villa" class="tab-content">
+            <section class="min-h-screen bg-[#070a0c] py-24">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white uppercase tracking-wider mt-2">
+                            Villa<br /><span class="font-serif italic font-normal text-white/40">Eksklusif</span></h2>
+                        <div class="w-12 h-0.5 bg-white/50 mx-auto mt-5"></div>
+                        <p class="text-white text-sm mt-4 font-light">Vila privat tersembunyi dengan pemandangan alam
+                            memukau, khusus untuk kenyamanan dan ketenangan sempurna Anda.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <!-- Villa 1 -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="./assets/villa/Villa1.jpg" alt="Villa1"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/50 text-white backdrop-blur-md">
+                                    Amalfi Cliffside Villa</div>
+                            </div>
+                            <div class="p-7">
+                                <h3 class="font-serif text-2xl font-bold text-white mb-3">Amalfi Cliffside Villa</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-6">Vila mewah 4 kamar di atas tebing
+                                    dengan kolam renang infinity, akses privat ke pantai, dan pemandangan laut lepas 180
+                                    derajat.</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-5">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-user-group text-white/50 mr-1.5"></i>Hingga 8 Tamu</span>
+                                    <button onclick="openBookingModal('AmalfiCliffsideVilla')"
+                                        class="px-5 py-2 border border-white/50 text-white hover:bg-white rounded-full text-[11px] uppercase font-bold tracking-widest transition-all">
+                                        PESAN VILLA
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fleet 2: Superyacht -->
+                        <div class="pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="./assets/villa/villa2.jpg" alt="villa2"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/50 text-white backdrop-blur-md">
+                                    MOUNTAIN RETREAT</div>
+                            </div>
+                            <div class="p-7">
+                                <h3 class="font-serif text-2xl font-bold text-white mb-3">Bamboo Forest Sanctuary</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-6">Suaka privat di tengah keheningan
+                                    alam, dilengkapi jacuzzi terbuka, layanan koki pribadi, dan pemandangan lembah hijau
+                                    yang asri.</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-5">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-user-group text-white/50 mr-1.5"></i>Hingga 6 Tamu</span>
+                                    <button onclick="openBookingModal('Bamboo Forest Sanctuary')"
+                                        class="px-5 py-2 border border-white/50 text-white hover:bg-white rounded-full text-[11px] uppercase font-bold tracking-widest transition-all">
+                                        PESAN VILLA
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 3 : Services -->
+        <div id="tab-services" class="tab-content">
+            <section class="relative min-h-screen bg-[#070a0c] py-24 overflow-hidden">
+
+                <!-- Deep Dark Photo Backdrop with Subtle Glow Overlay (Hero Style) -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./assets/forest.jpg" alt="Pesona Alam Luxury Services Backdrop"
+                        class="w-full h-full object-cover object-center hero-zoom opacity-35" />
+                    <!-- Dark gradient overlays -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/30"></div>
+                    <!-- Subtle noise texture overlay -->
+                    <div class="absolute inset-0 hero-grain opacity-[0.04]"></div>
+                </div>
+
+                <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white uppercase tracking-wider mt-2">
+                            Jelajahi<br /><span class="font-serif italic font-normal text-white/40">Lebih Jauh</span>
+                        </h2>
+                        <div class="w-12 h-0.5 bg-white/50 mx-auto mt-5"></div>
+                        <p class="text-white/50 text-sm mt-4 font-light">Temukan pengalaman perjalanan terbaik dengan
+                            destinasi pilihan, perjalanan yang nyaman, dan layanan yang dirancang untuk membuat setiap
+                            momen lebih berkesan.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                        <!-- Service 1 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-person"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Private Tour</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Akses armada global dari
+                                Perjalanan privat dengan itinerary yang fleksibel, dirancang sesuai kebutuhan dan
+                                preferensi Anda.</p>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Group Tour</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Nikmati perjalanan bersama
+                                keluarga, teman, atau komunitas dengan paket wisata yang telah disiapkan secara lengkap.
+                            </p>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Custom Trip</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Bebas menentukan destinasi,
+                                aktivitas, durasi, dan pengalaman perjalanan sesuai keinginan Anda.</p>
+                        </div>
+
+                        <!-- Service 4 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-mountain-city"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Hotel &amp; Villa Booking</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Pilihan akomodasi terbaik mulai
+                                dari hotel premium hingga villa eksklusif di berbagai destinasi.</p>
+                        </div>
+
+                        <!-- Service 5 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-van-shuttle"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Transportation</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Layanan transportasi perjalanan
+                                yang nyaman, aman, dan terpercaya selama berada di destinasi.</p>
+                        </div>
+
+                        <!-- Service 6 -->
+                        <div
+                            class="pesona-card p-8 rounded-3xl border border-white/10 space-y-4 group hover:border-white/50 transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-gray-800/50 border border-white/50 flex items-center justify-center text-white text-xl">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <h3 class="font-serif text-xl font-bold text-white">Travel Concierge</h3>
+                            <p class="text-white/50 text-xs leading-relaxed font-light">Bantuan personal untuk mengatur
+                                kebutuhan perjalanan, mulai dari itinerary, reservasi, hingga kebutuhan khusus selama
+                                perjalanan.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Budget Calculator Banner inside Services page -->
+                    <div
+                        class="mt-16 bg-gradient-to-r from-white/5 via-white/[0.03] to-black/60 border border-white/20 rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                        <div class="space-y-2 max-w-2xl text-center md:text-left">
+                            <span
+                                class="px-3 py-1 rounded-full bg-white/10 border border-white/30 text-white text-[11px] font-bold uppercase tracking-wider inline-flex items-center gap-1.5">
+                                <i class="fa-solid fa-calculator text-[10px]"></i> Fitur Interaktif
+                            </span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Ingin Hitung Biaya Liburan
+                                Anda?</h3>
+                            <p class="text-white/60 text-xs sm:text-sm font-light leading-relaxed">
+                                Gunakan Kalkulator Budget Ladub Adventure untuk mensimulasikan estimasi total biaya
+                                perjalanan Anda secara transparan.
+                            </p>
+                        </div>
+                        <button onclick="switchTab('calculator')"
+                            class="flex-shrink-0 px-7 py-3.5 bg-white text-[#0a0a0a] rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white/90 transition-colors shadow-lg shadow-white/10 flex items-center gap-2">
+                            <span>Buka Kalkulator Budget</span>
+                            <i class="fa-solid fa-calculator text-xs"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 4: Calculator Budget -->
+        <div id="tab-calculator" class="tab-content">
+            <section class="relative min-h-screen bg-[#070a0c] py-24 overflow-hidden">
+                <!-- Photo Backdrop -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./assets/pantai.jpg" alt="Ladub Adventure Calculator Backdrop"
+                        class="w-full h-full object-cover object-center opacity-20 filter blur-sm scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]"></div>
+                </div>
+
+                <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+                    <!-- Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white uppercase tracking-wider mt-4">
+                            Kalkulator <span class="italic font-normal text-white/40">Budget</span>
+                        </h2>
+                        <p class="text-white/60 text-sm mt-3 font-light leading-relaxed">
+                            Hitung perkiraan biaya petualangan Anda bersama Ladub Adventure secara real-time sesuai
+                            kebutuhan destinasi, durasi, akomodasi, dan layanan tambahan.
+                        </p>
+                    </div>
+
+                    <!-- Calculator Main Container -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+                        <!-- Inputs Column -->
+                        <div
+                            class="lg:col-span-7 bg-[#141518]/90 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl space-y-6">
+                            <h3
+                                class="text-lg font-bold text-white font-serif flex items-center gap-2.5 pb-4 border-b border-white/10">
+                                <i class="fa-solid fa-sliders text-white/70 text-sm"></i>
+                                Parameter Perjalanan
+                            </h3>
+
+                            <!-- Destinasi -->
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs uppercase tracking-wider text-white/70 font-semibold flex items-center justify-between">
+                                    <span>Pilih Destinasi</span>
+                                    <span class="text-[10px] text-white/40 font-normal">Indonesia</span>
+                                </label>
+                                <select id="calc-destination" onchange="calculateTripBudget()"
+                                    class="w-full bg-[#1e2024] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/60 transition-colors cursor-pointer">
+                                    <option value="bali">Bali Expedition (Start Rp 650.000/hari)</option>
+                                    <option value="jogja">Yogyakarta Cultural Escape (Start Rp 450.000/hari)</option>
+                                    <option value="labuan-bajo">Labuan Bajo Komodo Voyage (Start Rp 1.100.000/hari)
+                                    </option>
+                                    <option value="sumba">Sumba Island Wild Tour (Start Rp 950.000/hari)</option>
+                                    <option value="raja-ampat">Raja Ampat Paradise Expedition (Start Rp 1.500.000/hari)
+                                    </option>
+                                </select>
+                            </div>
+
+                            <!-- Group Size & Duration Row -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Jumlah Peserta -->
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs uppercase tracking-wider text-white/70 font-semibold flex items-center justify-between">
+                                        <span>Jumlah Peserta</span>
+                                        <span class="text-[10px] text-white/50 font-medium">Orang</span>
+                                    </label>
+                                    <div class="relative flex items-center">
+                                        <input type="number" id="calc-travelers" value="2" min="1" max="50"
+                                            oninput="calculateTripBudget()"
+                                            class="w-full bg-[#1e2024] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/60 transition-colors" />
+                                        <i class="fa-solid fa-users absolute right-4 text-xs text-white/40"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Durasi Perjalanan -->
+                                <div class="space-y-2">
+                                    <label
+                                        class="text-xs uppercase tracking-wider text-white/70 font-semibold flex items-center justify-between">
+                                        <span>Durasi (Hari)</span>
+                                        <span class="text-[10px] text-white/50 font-medium">Hari</span>
+                                    </label>
+                                    <div class="relative flex items-center">
+                                        <input type="number" id="calc-duration" value="3" min="1" max="30"
+                                            oninput="calculateTripBudget()"
+                                            class="w-full bg-[#1e2024] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/60 transition-colors" />
+                                        <i class="fa-solid fa-calendar-days absolute right-4 text-xs text-white/40"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tipe Akomodasi -->
+                            <div class="space-y-2">
+                                <label class="text-xs uppercase tracking-wider text-white/70 font-semibold">
+                                    Tipe Akomodasi
+                                </label>
+                                <select id="calc-lodging" onchange="calculateTripBudget()"
+                                    class="w-full bg-[#1e2024] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/60 transition-colors cursor-pointer">
+                                    <option value="standard">Standard Boutique Hotel (1.0x)</option>
+                                    <option value="villa">Private Villa & Resort (1.75x)</option>
+                                    <option value="luxury">Ultra Luxury Private Sanctuary (2.8x)</option>
+                                </select>
+                            </div>
+
+                            <!-- Layanan Tambahan (Checkboxes) -->
+                            <div class="space-y-3 pt-2">
+                                <label class="text-xs uppercase tracking-wider text-white/70 font-semibold block">
+                                    Layanan Tambahan (Opsional)
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <label
+                                        class="flex items-center gap-3 p-3 rounded-xl bg-[#1e2024]/70 border border-white/10 cursor-pointer hover:border-white/40 transition-colors">
+                                        <input type="checkbox" id="calc-extra-transport"
+                                            onchange="calculateTripBudget()"
+                                            class="w-4 h-4 accent-white rounded cursor-pointer" checked>
+                                        <span class="text-xs text-white/90">Mobil &amp; Driver Privat (+350k/hr)</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center gap-3 p-3 rounded-xl bg-[#1e2024]/70 border border-white/10 cursor-pointer hover:border-white/40 transition-colors">
+                                        <input type="checkbox" id="calc-extra-guide" onchange="calculateTripBudget()"
+                                            class="w-4 h-4 accent-white rounded cursor-pointer" checked>
+                                        <span class="text-xs text-white/90">Tour Guide Lokal (+250k/hr)</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center gap-3 p-3 rounded-xl bg-[#1e2024]/70 border border-white/10 cursor-pointer hover:border-white/40 transition-colors">
+                                        <input type="checkbox" id="calc-extra-drone" onchange="calculateTripBudget()"
+                                            class="w-4 h-4 accent-white rounded cursor-pointer">
+                                        <span class="text-xs text-white/90">Dokumentasi Drone (+300k/hr)</span>
+                                    </label>
+
+                                    <label
+                                        class="flex items-center gap-3 p-3 rounded-xl bg-[#1e2024]/70 border border-white/10 cursor-pointer hover:border-white/40 transition-colors">
+                                        <input type="checkbox" id="calc-extra-culinary" onchange="calculateTripBudget()"
+                                            class="w-4 h-4 accent-white rounded cursor-pointer">
+                                        <span class="text-xs text-white/90">Kuliner &amp; Dining Upgrade
+                                            (+400k/hr)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Summary & Pricing Output Column -->
+                        <div
+                            class="lg:col-span-5 bg-gradient-to-b from-[#1c1e22] to-[#121316] p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl space-y-6 relative overflow-hidden">
+                            <!-- Background Accent Glow -->
+                            <div
+                                class="absolute -top-16 -right-16 w-40 h-40 bg-white/5 rounded-full blur-3xl pointer-events-none">
+                            </div>
+
+                            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                <h3 class="text-base font-bold text-white font-serif flex items-center gap-2">
+                                    <i class="fa-solid fa-receipt text-white/70"></i>
+                                    Ringkasan Estimasi
+                                </h3>
+                                <span id="calc-summary-duration"
+                                    class="px-2.5 py-1 rounded-full bg-white/10 text-white/80 text-[11px] font-semibold">
+                                    2 Peserta · 3 Hari
+                                </span>
+                            </div>
+
+                            <!-- Total Display Card -->
+                            <div class="bg-[#0e0f11]/80 rounded-2xl p-6 border border-white/10 text-center space-y-2">
+                                <span class="text-xs text-white/50 uppercase tracking-widest font-medium">Estimasi Total
+                                    Biaya</span>
+                                <div id="calc-total-price"
+                                    class="text-3xl sm:text-4xl font-bold font-serif text-white tracking-tight">
+                                    Rp 0
+                                </div>
+                                <div id="calc-per-person" class="text-xs text-white/60 font-light">
+                                    Rp 0 / orang
+                                </div>
+                            </div>
+
+                            <!-- Features included notes -->
+                            <div class="space-y-2.5 text-xs text-white/70 pt-2">
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-white/60 text-[10px]"></i>
+                                    <span>Estimasi biaya sudah termasuk akomodasi & paket</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-white/60 text-[10px]"></i>
+                                    <span>Itinerary fleksibel dapat disesuaikan kembali</span>
+                                </div>
+                                <div class="flex items-center gap-2.5">
+                                    <i class="fa-solid fa-circle-check text-white/60 text-[10px]"></i>
+                                    <span>Konsultasi gratis dengan Concierge Ladub Adventure</span>
+                                </div>
+                            </div>
+
+                            <!-- Action CTA -->
+                            <div class="pt-4 space-y-3">
+                                <button onclick="applyBudgetToContact()"
+                                    class="w-full py-4 bg-white hover:bg-white/90 text-[#0f0f0f] font-bold text-xs uppercase tracking-widest rounded-2xl shadow-lg shadow-white/10 hover:scale-[1.02] transition-all flex items-center justify-center gap-2.5">
+                                    <span>Konsultasi Sesuai Budget Ini</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </button>
+                                <p class="text-[10px] text-center text-white/40 italic">
+                                    *Harga di atas adalah estimasi dan dapat berubah sesuai musim liburan.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab 5: Destination -->
+        <div id="tab-destinations" class="tab-content">
+            <section class="min-h-screen bg-[#070a0c] py-24">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <!-- Section Header -->
+                    <div
+                        class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-8 border-b border-white/10 gap-6">
+                        <div>
+                            <h2
+                                class="font-serif text-3xl sm:text-5xl font-bold text-white uppercase tracking-wider mt-2">
+                                Destinasi<br /><span class="font-serif italic font-normal text-white/40">Wisata</span>
+                            </h2>
+                        </div>
+                        <!-- Category Filters -->
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="filterDestinations('all')"
+                                class="dest-filter-btn px-5 py-2 text-[11px] uppercase tracking-widest bg-white text-[#070a0c] rounded-full font-bold transition-all">Semua</button>
+                            <button onclick="filterDestinations('island')"
+                                class="dest-filter-btn px-5 py-2 text-[11px] uppercase tracking-widest border border-white/20 text-white/60 rounded-full font-medium hover:border-white/50 hover:text-white/30 transition-all">Pulau</button>
+                            <button onclick="filterDestinations('alpine')"
+                                class="dest-filter-btn px-5 py-2 text-[11px] uppercase tracking-widest border border-white/20 text-white/60 rounded-full font-medium hover:border-white/50 hover:text-white/30 transition-all">Pegunungan</button>
+                            <button onclick="filterDestinations('cultural')"
+                                class="dest-filter-btn px-5 py-2 text-[11px] uppercase tracking-widest border border-white/20 text-white/60 rounded-full font-medium hover:border-white/50 hover:text-white/30 transition-all">Budaya</button>
+                        </div>
+                    </div>
+
+                    <!-- Destinations Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                        <!-- Destination 1 -->
+                        <div
+                            class="dest-card island pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/bromo.jpg" alt="Bromo"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    Jawa Timur</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 800.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Gunung Bromo</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Resor privat lereng pegunungan
+                                    dengan pemandangan lanskap Bromo</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-users text-white mr-1.5"></i>Hingga 10 Tamu</span>
+                                    <button onclick="openBookingModal('Bromo')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Destination 2 -->
+                        <div
+                            class="dest-card alpine pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/yogya.jpg" alt="Tugu Jogja"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    Jogja</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 800.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Tugu Jogja</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Vila warisan budaya elegan di
+                                    pusat Kota Jogja dengan kolam renang privat, interior nuansa klasik Jawa.</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-users text-white mr-1.5"></i>Hingga 6 Tamu</span>
+                                    <button onclick="openBookingModal('Tugu Jogja')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Destination 3 -->
+                        <div
+                            class="dest-card cultural pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/komodo.jpg" alt="Pulau Komodo"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    NTT</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 3.500.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Pulau Komodo</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Resor pulau privat dengan
+                                    pemandangan laut lepas, akses pantai pribadi, fasilitas snorkeling, dan tur kapal
+                                    Phinisi.</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-users text-white mr-1.5"></i>Hingga 6 Tamu</span>
+                                    <button onclick="openBookingModal('Pulau')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Destination 4 -->
+                        <div
+                            class="dest-card island pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/agung.jpg" alt="Gunung Agung"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    Bali</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 1.500.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Gunung Agung</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Vila kemewahan tropis di atas
+                                    tebing dengan pemandangan megah Gunung Agung</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-users text-white mr-1.5"></i>Hingga 8 Tamu</span>
+                                    <button onclick="openBookingModal('Gunung')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Destination 5 -->
+                        <div
+                            class="dest-card cultural pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/gallery/tumpaksewu.jpg" alt="tumpaksewu"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    Jawa Timur</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 400.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Tumpak Sewu</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Eco-lodge mewah di tengah keasrian
+                                    hutan tropis dengan pemandangan langsung ke megahnya Air Terjun Tumpak Sewu</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white"><i
+                                            class="fa-solid fa-users text-white-400 mr-1.5"></i>Hingga 5 Tamu</span>
+                                    <button onclick="openBookingModal('Tumpak Sewu')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Destination 6 -->
+                        <div
+                            class="dest-card island pesona-card rounded-3xl overflow-hidden border border-white/10 group">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="./assets/gallery/borobudur.jpg" alt="Candi Borobudur"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-transparent to-transparent">
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full bg-gray-800/50 border border-white/40 text-white backdrop-blur-md">
+                                    Jawa Tengah</div>
+                                <div
+                                    class="absolute bottom-4 right-4 px-3 py-1.5 text-xs font-bold rounded-full bg-white/10 border border-white/20 text-white backdrop-blur-md">
+                                    Rp 1.500.000 / malam</div>
+                            </div>
+                            <div class="p-6">
+                                <h3
+                                    class="font-serif text-xl font-bold text-white mb-2 group-hover:text-white/50 transition-colors">
+                                    Candi Borobudur</h3>
+                                <p class="text-white/50 text-xs leading-relaxed mb-5">Resor sanctuary eksklusif yang
+                                    dikelilingi perbukitan Menoreh, akses dekat ke Borobudur.</p>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-4">
+                                    <span class="text-[11px] text-white/40"><i
+                                            class="fa-solid fa-users text-white mr-1.5"></i>Hingga 5 Tamu</span>
+                                    <button onclick="openBookingModal('Candi Borobudur')"
+                                        class="text-xs uppercase tracking-widest font-bold text-white hover:text-white/50 transition-colors flex items-center gap-1">
+                                        Pesan <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Form -->
+        <div id="tab-contact" class="tab-content">
+            <section class="min-h-screen bg-[#070a0c] py-24">
+                <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+                    <!-- Section Header -->
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white uppercase tracking-wider mt-2">
+                            Mulai<br /><span class="font-serif italic font-normal text-white/40">Perjalanan Anda</span>
+                        </h2>
+                        <div class="w-12 h-0.5 bg-white/40 mx-auto mt-5"></div>
+                    </div>
+
+                    <!-- Two-Column Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                        <!-- Left Column: Heading & Contact Info -->
+                        <div class="lg:col-span-5 space-y-8">
+                            <div>
+                                <span class="text-[11px] uppercase tracking-[0.3em] text-white font-semibold">KONSULTASI
+                                    LANGSUNG</span>
+                                <h3 class="font-serif text-3xl font-bold text-white mt-2 leading-tight">
+                                    Hubungi Tim Kami
+                                </h3>
+                            </div>
+
+                            <p class="text-white/60 text-sm leading-relaxed font-light">
+                                Terhubung langsung dengan kami secara private dan dapat mengatur perjalanan anda menjadi
+                                lebih santai dan teratur.
+                            </p>
+
+                            <!-- Address & Hotline Info Card -->
+                            <div class="space-y-6 pt-2">
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-2xl bg-white/60 border border-white/30 flex items-center justify-center text-white flex-shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-sm font-semibold text-white">Kantor Pusat Jakarta
+                                        </h4>
+                                        <p class="text-white/60 text-xs mt-1">Jalan. Ahmad Yani No 20
+                                        </p>
+                                        <p class="text-white/40 text-xs">Kota Jakarta Barat, Indonesia
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-2xl bg-white/60 border border-white/30 flex items-center justify-center text-white flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-sm font-semibold text-white">Hotline 24/7</h4>
+                                        <p class="text-white/40 text-xs">+62 21 8062 8888 (Jakarta Desk)</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-2xl bg-white/60 border border-white/30 flex items-center justify-center text-white flex-shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-serif text-sm font-semibold text-white">Email Terenkripsi</h4>
+                                        <p class="text-white/60 text-xs mt-1">ladubadventure@mail.com</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Functional Dark-Themed Contact Form -->
+                        <div class="lg:col-span-7">
+                            <div class="pesona-card p-8 sm:p-10 border border-white/10 rounded-3xl">
+
+                                <h3 class="font-serif text-2xl font-bold text-white mb-2">Formulir Konsultasi
+                                </h3>
+                                <p class="text-white/50 text-xs mb-8 font-light">Isi preferensi perjalanan Anda.
+                                    Konsultan kami akan merespons dalam waktu 2 jam.</p>
+
+                                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <!-- Full Name -->
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-2">Nama
+                                                Lengkap *</label>
+                                            <input type="text" id="form-name" required placeholder="Alexander Vance"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                        </div>
+
+                                        <!-- Email -->
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-2">Email
+                                                *</label>
+                                            <input type="email" id="form-email" required
+                                                placeholder="ladubadventure@mail.com"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                        <!-- Travel Dates -->
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-2">Target
+                                                Perjalanan</label>
+                                            <select id="form-month"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-white/40 transition-colors">
+                                                <option value="Q3 2026">Q3 2026 (Segera)</option>
+                                                <option value="Q4 2026">Q4 2026 (Akhir Tahun)</option>
+                                                <option value="Q1 2027">Q1 2027</option>
+                                                <option value="Q2 2027">Q2 2027</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Estimated Budget -->
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-2">Estimasi
+                                                Anggaran</label>
+                                            <select id="form-budget"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-white/40 transition-colors">
+                                                <option value="Rp500k - Rp1000k">Rp 500.000 - Rp 1000.000</option>
+                                                <option value="Rp2000k - Rp3000k">Rp 2000.000 - Rp 3000.000</option>
+                                                <option value="Rp4000k - Rp5000k">Rp 4000.000 - Rp 5000.000</option>
+                                                <option value="Rp5000k++ ">Rp5000.000+ </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Special Requests / Notes -->
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-2">Preferensi
+                                            &amp; Catatan Khusus</label>
+                                        <textarea id="form-message" rows="4"
+                                            placeholder="Tuliskan preferensi jet privat, makanan khusus, atau kebutuhan pengawalan..."
+                                            class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-white/40 transition-colors placeholder:text-white/30"></textarea>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" id="form-submit-btn"
+                                        class="w-full py-4 bg-white text-[#070a0c] font-bold text-xs uppercase tracking-[0.25em] rounded-full hover:bg-white/40 transition-all duration-300 flex items-center justify-center gap-2 shadow-2xl">
+                                        <span id="btn-text">KIRIM PERMINTAAN</span>
+                                        <i id="btn-spinner" class="fa-solid fa-spinner fa-spin hidden"></i>
+                                    </button>
+
+                                </form>
+
+                                <!-- Success Card -->
+                                <div id="contact-success-card" class="hidden text-center py-6">
+                                    <div
+                                        class="w-16 h-16 mx-auto rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+                                        <i class="fa-solid fa-check"></i>
+                                    </div>
+                                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Permintaan Konsultasi
+                                        Terkirim!</h3>
+                                    <p class="text-white/50 text-xs mb-8 font-light">Tim Concierge kami akan
+                                        menghubungi Anda dalam waktu 2 jam.</p>
+
+                                    <div
+                                        class="text-left bg-[#050708] border border-white/10 rounded-2xl p-6 space-y-3 mb-8">
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Nomor Referensi</span>
+                                            <span id="contact-summary-ref" class="text-white font-semibold"></span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Nama</span>
+                                            <span id="contact-summary-name" class="text-white"></span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Email</span>
+                                            <span id="contact-summary-email" class="text-white"></span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Telepon</span>
+                                            <span id="contact-summary-phone" class="text-white"></span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Target
+                                                Perjalanan</span>
+                                            <span id="contact-summary-target" class="text-white"></span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span class="text-white/40 uppercase tracking-widest">Estimasi
+                                                Anggaran</span>
+                                            <span id="contact-summary-budget" class="text-white"></span>
+                                        </div>
+                                    </div>
+
+                                    <button onclick="resetContactForm()"
+                                        class="w-full py-4 bg-white text-[#070a0c] font-bold text-xs uppercase tracking-[0.25em] rounded-full hover:bg-white/40 transition-all duration-300">
+                                        Buat Konsultasi Baru
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Login Page -->
+        <div id="tab-login" class="tab-content">
+            <section
+                class="min-h-screen bg-[#070a0c] py-16 sm:py-24 relative flex items-center justify-center overflow-hidden">
+                <!-- Ambient Backlight Glowing Circles -->
+                <div
+                    class="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-[140px] pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div class="absolute inset-0 hero-grain opacity-[0.03]"></div>
+
+                <div class="max-w-5xl w-full mx-auto px-4 sm:px-6 relative z-10">
+
+                    <!-- Main Auth Card Container (Split Layout: Left Image, Right Form) -->
+                    <div id="auth-card-main"
+                        class="pesona-card border border-white/15 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[620px]">
+
+                        <!-- LEFT COLUMN: LUXURY BACKGROUND IMAGE & CLIENT TESTIMONIAL -->
+                        <div
+                            class="lg:col-span-5 relative hidden lg:flex flex-col justify-between p-8 overflow-hidden group">
+                            <!-- Background Image -->
+                            <img src="./assets/forest.jpg" alt="Pesona Alam Expedition"
+                                class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-1000 ease-out" />
+
+                            <!-- Gradient Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#070a0c] via-[#070a0c]/60 to-[#070a0c]/40">
+                            </div>
+
+                            <!-- Top Left Logo -->
+                            <div class="relative z-10 flex items-center gap-3">
+                                <div
+                                    class="w-9 h-9 rounded-full border border-white/40 bg-white/60 backdrop-blur-md flex items-center justify-center text-white">
+                                    <i class="fa-solid fa-compass text-sm"></i>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Left Testimonial & Quote -->
+                            <div class="relative z-10 space-y-4 pt-20">
+                                <p class="font-serif text-lg sm:text-xl font-bold text-white leading-snug">
+                                    "Ladub . Adventure"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- RIGHT COLUMN: LOGIN / REGISTER FORMS -->
+                        <div
+                            class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-center bg-[#070a0c]/90 backdrop-blur-xl relative">
+
+                            <!-- Mode Header -->
+                            <div class="mb-6">
+                                <h2 id="auth-form-heading" class="font-serif text-2xl sm:text-3xl font-bold text-white">
+                                    Selamat Datang di Ladub Adventure</h2>
+                                <p id="auth-form-subheading" class="text-white/50 text-xs mt-1 font-light">Login Untuk
+                                    mengakses rencana anda dalam liburan yang menyenangkan.</p>
+                            </div>
+
+                            <!-- Quick Demo Credentials Helper Badge -->
+                            <div
+                                class="p-3 bg-white/50 border border-white/30 rounded-2xl flex items-center justify-between gap-3 text-xs mb-6">
+                                <div class="flex items-center gap-2 text-white">
+                                    <i class="fa-solid fa-key text-xs"></i>
+                                    <span class="text-[11px] font-medium">Demo: ladubadventure@mail.com</span>
+                                </div>
+                                <button type="button" onclick="fillDemoCredentials()"
+                                    class="px-3 py-1 bg-white text-[#070a0c] font-bold text-[10px] uppercase tracking-wider rounded-lg hover:bg-white/50 transition-colors">
+                                    Autofill Demo
+                                </button>
+                            </div>
+
+                            <!-- Login Form -->
+                            <div id="auth-login-container" class="space-y-5">
+                                <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
+
+                                    <!-- Email Input -->
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1.5">Email
+                                        </label>
+                                        <div class="relative">
+                                            <input type="email" id="login-email" required
+                                                placeholder="ladubadventure@mail.com"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl pl-10 pr-4 py-3 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                            <i
+                                                class="fa-regular fa-envelope absolute left-3.5 top-3.5 text-white/30 text-xs"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Password Input -->
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1.5">Kata
+                                            Sandi *</label>
+                                        <div class="relative">
+                                            <input type="password" id="login-password" required
+                                                placeholder="••••••••••••"
+                                                class="w-full bg-[#050708] border border-white/10 text-white rounded-xl pl-10 pr-10 py-3 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                            <i
+                                                class="fa-solid fa-lock absolute left-3.5 top-3.5 text-white/30 text-xs"></i>
+                                            <button type="button"
+                                                onclick="togglePasswordVisibility('login-password', 'eye-icon-login')"
+                                                class="absolute right-3.5 top-3.5 text-white/40 hover:text-white text-xs focus:outline-none">
+                                                <i id="eye-icon-login" class="fa-regular fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Options Row: Forgot Password & Remember Sign In Toggle Switch -->
+                                    <div class="flex items-center justify-between pt-1">
+                                        <a href="#"
+                                            onclick="alert('Instruksi pemulihan kata sandi telah dikirim ke email Anda.'); return false;"
+                                            class="text-xs text-white hover:underline font-medium">Forgot
+                                            password?</a>
+
+                                        <div class="flex items-center gap-2.5">
+                                            <span class="text-xs text-white/60 font-light">Remember sign in
+                                                details</span>
+                                            <label class="toggle-switch">
+                                                <input type="checkbox" checked>
+                                                <span class="toggle-slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Login Button -->
+                                    <button type="submit" id="login-submit-btn"
+                                        class="w-full py-3.5 bg-gradient-to-r from-white to-white text-[#070a0c] font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-white/20 mt-2">
+                                        <span id="login-btn-text">Log In</span>
+                                        <i id="login-btn-spinner" class="fa-solid fa-circle-notch fa-spin hidden"></i>
+                                    </button>
+
+                                </form>
+
+                                <!-- Switch to Register Mode Link -->
+                                <p class="text-center text-xs text-white/50 pt-2 font-light">
+                                    Don't have an account?
+                                    <button type="button" onclick="switchAuthMode('register')"
+                                        class="text-white font-bold hover:underline">Sign up</button>
+                                </p>
+                            </div>
+
+                            <!-- Register Form -->
+                            <div id="auth-register-container" class="space-y-4 hidden">
+                                <form onsubmit="handleRegisterSubmit(event)" class="space-y-3.5">
+
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1">Nama
+                                            Lengkap *</label>
+                                        <input type="text" id="reg-name" required placeholder="Karen Yue"
+                                            class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1">Email
+                                            Privat *</label>
+                                        <input type="email" id="reg-email" required
+                                            placeholder="karen.yue@familyoffice.com"
+                                            class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1">Nomor
+                                            WhatsApp / Telepon *</label>
+                                        <input type="tel" id="reg-phone" required placeholder="+62 812 3456 7890"
+                                            class="w-full bg-[#050708] border border-white/10 text-white rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1">Kata
+                                                Sandi *</label>
+                                            <div class="relative">
+                                                <input type="password" id="reg-password" required
+                                                    placeholder="••••••••••••"
+                                                    class="w-full bg-[#050708] border border-white/10 text-white rounded-xl pl-3 pr-8 py-2.5 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                                <button type="button"
+                                                    onclick="togglePasswordVisibility('reg-password', 'eye-icon-reg1')"
+                                                    class="absolute right-2.5 top-3 text-white/40 hover:text-white text-xs">
+                                                    <i id="eye-icon-reg1" class="fa-regular fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-[11px] uppercase tracking-widest text-white font-semibold mb-1">Konfirmasi
+                                                Sandi *</label>
+                                            <div class="relative">
+                                                <input type="password" id="reg-confirm-password" required
+                                                    placeholder="••••••••••••"
+                                                    class="w-full bg-[#050708] border border-white/10 text-white rounded-xl pl-3 pr-8 py-2.5 text-xs focus:outline-none focus:border-white transition-colors placeholder:text-white/30">
+                                                <button type="button"
+                                                    onclick="togglePasswordVisibility('reg-confirm-password', 'eye-icon-reg2')"
+                                                    class="absolute right-2.5 top-3 text-white/40 hover:text-white text-xs">
+                                                    <i id="eye-icon-reg2" class="fa-regular fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <label
+                                            class="flex items-start gap-2 cursor-pointer text-[11px] text-white/60 font-light leading-snug">
+                                            <input type="checkbox" id="reg-terms" required
+                                                class="mt-0.5 w-3.5 h-3.5 rounded border-white/20 bg-[#050708] text-white focus:ring-0">
+                                            <span>Saya menyetujui Ketentuan Keanggotaan Ladub Adventure &amp;
+                                                Kerahasiaan
+                                                NDA.</span>
+                                        </label>
+                                    </div>
+
+                                    <button type="submit" id="reg-submit-btn"
+                                        class="w-full py-3.5 bg-gradient-to-r from-white to-white text-[#070a0c] font-bold text-xs uppercase tracking-[0.2em] rounded-xl hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-white/20">
+                                        <span id="reg-btn-text">AJUKAN KEANGGOTAAN LADUB ADVENTURE</span>
+                                        <i id="reg-btn-spinner" class="fa-solid fa-circle-notch fa-spin hidden"></i>
+                                    </button>
+
+                                </form>
+
+                                <p class="text-center text-xs text-white/50 pt-1 font-light">
+                                    Sudah memiliki akun Ladub Adventure?
+                                    <button type="button" onclick="switchAuthMode('login')"
+                                        class="text-white font-bold hover:underline">Log in</button>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="vip-lounge-view"
+                        class="pesona-card p-8 sm:p-10 border border-twhite/30 rounded-3xl shadow-2xl space-y-6 hidden">
+
+                        <div class="flex items-center justify-between border-b border-white/10 pb-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-white to-white p-0.5 flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+                                        alt="VIP Avatar" class="w-full h-full object-cover rounded-[14px]" />
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span
+                                            class="px-2.5 py-0.5 rounded-full bg-white/20 border border-white/40 text-white text-[9px] font-bold uppercase tracking-wider">Member
+                                            dari Ladub Adventure</span>
+                                        <span class="text-[10px] text-white/40 font-mono">ID: LA-VIP-889021</span>
+                                    </div>
+                                    <h3 class="font-serif text-2xl font-bold text-white mt-1">Selamat Datang, <span
+                                            id="vip-member-name">John Due</span></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portal Stat Cards Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-[#050708] border border-white/10 p-4 rounded-2xl">
+                                <span class="text-[10px] uppercase font-bold text-white tracking-wider">Kantong
+                                    Anda</span>
+                                <div class="text-xl font-serif font-bold text-white mt-1">Rp 5.000.000</div>
+                                <span class="text-[10px] text-white/40 font-light">Kanton Ladub</span>
+                            </div>
+
+                            <div class="bg-[#050708] border border-white/10 p-4 rounded-2xl">
+                                <span class="text-[10px] uppercase font-bold text-white tracking-wider">Tour
+                                    Guide</span>
+                                <div class="text-sm font-serif font-bold text-white mt-1">Joko Susanto</div>
+                                <span class="text-[10px] text-white font-light"><i
+                                        class="fa-solid fa-circle text-[6px] mr-1"></i>Online 24/7</span>
+                            </div>
+
+                            <div class="bg-[#050708] border border-white/10 p-4 rounded-2xl">
+                                <span class="text-[10px] uppercase font-bold text-white tracking-wider">Wisata yang
+                                    dipilih</span>
+                                <div class="text-sm font-serif font-bold text-white mt-1">Gunung Agung</div>
+                                <span class="text-[10px] text-white/40 font-light">Wisata disekitar gunung agung</span>
+                            </div>
+                        </div>
+
+                        <!-- Quick Member Actions -->
+                        <div class="space-y-3 pt-2">
+                            <h4 class="font-serif text-xs font-semibold uppercase tracking-widest text-white">Akses
+                                Cepat Member</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <button onclick="switchTab('destinations')"
+                                    class="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl text-left flex items-center justify-between text-xs text-white transition-all group">
+                                    <span><i class="fa-solid fa-compass text-white mr-2"></i>Jelajahi Destinasi
+                                        Rahasia</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-xs text-white/30 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                                <button onclick="switchTab('contact')"
+                                    class="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl text-left flex items-center justify-between text-xs text-white transition-all group">
+                                    <span><i class="fa-solid fa-headset text-white mr-2"></i>Konsultasi Langsung</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right text-xs text-white/30 group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Logout Button -->
+                        <div class="pt-4 border-t border-white/10 flex justify-end">
+                            <button onclick="handleLogout()"
+                                class="px-5 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-300 rounded-full text-xs font-semibold flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-arrow-right-from-bracket text-xs"></i>
+                                <span>Keluar dari Portal Ladub Adventure</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] border-t border-white/10 relative overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-[140px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1 space-y-4">
+                    <a href="#" onclick="switchTab('home')" class="flex flex-col leading-tight w-fit">
+                        <span class="font-sans font-bold text-[17px] text-white tracking-tight">LADUB .</span>
+                        <span
+                            class="text-[9px] uppercase tracking-[0.3em] text-white/40 font-medium mt-1">adventure</span>
+                    </a>
+                    <p class="text-white/40 text-xs leading-relaxed max-w-xs">
+                        Ekspedisi alam, penginapan privat eksklusif, dan destinasi rahasia Indonesia — dirancang bagi
+                        anda yang tak ingin puas hanya dengan liburan biasa.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-instagram text-xs"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-facebook-f text-xs"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-x-twitter text-xs"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore Links -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-semibold uppercase tracking-[0.2em]">Jelajahi</h4>
+                    <div class="flex flex-col space-y-2.5">
+                        <button onclick="switchTab('home')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Home</button>
+                        <button onclick="switchTab('about')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">About</button>
+                        <button onclick="switchTab('destinations')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Destinations</button>
+                        <button onclick="switchTab('villa')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Villa</button>
+                    </div>
+                </div>
+
+                <!-- Services Links -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-semibold uppercase tracking-[0.2em]">Layanan</h4>
+                    <div class="flex flex-col space-y-2.5">
+                        <button onclick="switchTab('services')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Semua
+                            Layanan</button>
+                        <button onclick="switchTab('calculator')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Kalkulator
+                            Budget</button>
+                        <button onclick="switchTab('contact')"
+                            class="text-left text-white/50 hover:text-white text-xs transition-colors w-fit">Konsultasi</button>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-semibold uppercase tracking-[0.2em]">Hubungi Kami</h4>
+                    <div class="flex flex-col space-y-2.5 text-xs text-white/50">
+                        <div class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-white/30 mt-0.5"></i>
+                            <span>Jalan. Ahmad Yani No 20, Kota Jakarta Barat, Indonesia</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-white/30"></i>
+                            <span>+62 21 8062 8888</span>
+                        </div>
+                        <div class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-white/30"></i>
+                            <span>ladubadventure@mail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-[11px]">&copy; 2026 Ladub Adventure. All rights reserved.</p>
+                <div class="flex items-center gap-6 text-[11px] text-white/30">
+                    <a href="#" class="hover:text-white/60 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white/60 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Toast Notification -->
+    <div id="toast-notification"
+        class="hidden fixed bottom-6 right-6 z-[100] max-w-xs w-full bg-[#0c0f11] border border-white/10 rounded-2xl shadow-2xl p-4 flex items-start gap-3 translate-y-10 opacity-0 transition-all duration-300">
+        <div
+            class="w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <h5 class="text-white text-xs font-semibold"></h5>
+            <p class="text-white/50 text-xs mt-1"></p>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
